@@ -21,7 +21,10 @@ class Configuration implements ConfigurationInterface
 //         $rootNode = $treeBuilder->root('fos_message');
         $treeBuilder = new TreeBuilder('fos_message'); 
         if (\method_exists($treeBuilder, 'getRootNode')) { $rootNode = $treeBuilder->getRootNode(); } 
-        else { // BC layer for symfony/config 4.1 and older $rootNode = $treeBuilder->root('fos_message'); }
+        else { 
+            // BC layer for symfony/config 4.1 and older 
+            $rootNode = $treeBuilder->root('fos_message'); 
+        }
 
         $rootNode
             ->children()
